@@ -16,12 +16,12 @@ class Player
 	end
 
 	def w00t
-		@health += 1
+		@health += 10
 		puts "#{@name} got w00ted"
 	end
 
 	def blam
-		@health -= 1
+		@health -= 10
 		puts "#{@name} got blammed"
 	end
 end
