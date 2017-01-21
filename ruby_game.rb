@@ -8,4 +8,6 @@ puts new_game.title
 new_game.add_player(p1)
 new_game.add_player(p2)
 puts new_game
-new_game.play
+new_game.play(3)
+new_game.print_stats
+new_game.print_scores

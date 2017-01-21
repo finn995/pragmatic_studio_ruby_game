@@ -24,4 +24,16 @@ class Player
 		@health -= 10
 		puts "#{@name} got blammed"
 	end
+
+	def <=>(other_player)
+		other_player.score <=> @score
+	end
+
+	def strong?
+		@health >= 100
+	end
+
+	def wimpy?
+		@health < 100
+	end
 end
