@@ -1,4 +1,5 @@
 require_relative 'player'
+require_relative 'game_turn'
 
 class Game
 	attr_reader :title
@@ -11,10 +12,6 @@ class Game
 		@players.push(a_player)
 	end
 
-	def roll_die
-		rand(1..6)
-	end
-
 	def play
 		puts "There are #{@players.size} in the game"
 		@players.each do |p|
@@ -22,14 +19,7 @@ class Game
 		end
 
 		@players.each do |p|
-			case roll_die
-			when 1..2
-				p.blam
-			when 5..6
-				p.w00t
-			else
-				p.health
-			end
+			GameTurn.take_turn(p)
 		end
 	end
 end
